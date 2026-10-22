@@ -25,20 +25,33 @@ footer{text-align:center;color:#9eb3c9;padding:20px;font-size:.86rem}
 button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 
 :root{--accent:#d5b6ff;--gold:#ffd677}body{background:radial-gradient(circle at 85% 2%,#503278,#10172d 65%)}main{max-width:960px}.brand{letter-spacing:.04em}.intro{max-width:650px;margin:14px auto;line-height:1.7}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}.levels{justify-content:center}.answer{line-height:1.45;overflow-wrap:anywhere}.question{font-size:clamp(1.2rem,3vw,1.55rem)}.word{font-size:clamp(1.7rem,6vw,2.7rem);color:#f1dfff;text-align:center;line-height:1.3;overflow-wrap:anywhere;margin:24px 0}.helper{font-size:.88rem;line-height:1.6;color:#c4cce1}.card{border-color:#665081}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.stat-grid div{background:#27324e;padding:17px;border-radius:16px}.stat-grid strong{display:block;font-size:1.5rem;color:var(--gold)}.stat-grid span{font-size:.83rem;color:#d4d7e4}.study-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.study-term{background:#23334f;padding:14px;border-radius:12px;line-height:1.5}.study-term b{display:block;color:#edddff}.study-term span{color:#d4dceb}input{width:100%;background:#091b34;color:white;border:1px solid #8494b0;border-radius:12px;padding:14px;font:inherit;margin:10px 0 20px}.review-item{padding:16px;border-left:4px solid #b9a2ff;margin:12px 0;background:#22334f;border-radius:10px;text-align:left;line-height:1.65}.review-item p{margin:5px 0}.score-big{font-size:2.5rem;color:#ffd677}.context-icon{text-align:center;font-size:3rem;padding:16px;background:#25263f;border-radius:16px}.nav-button{background:transparent;border:1px solid #8292b4;color:white;padding:8px 13px;font-size:.85rem}.progress{margin-bottom:8px}.progress-copy{font-size:.8rem;color:#bfcbe0;margin-bottom:20px}.study-title{font-size:1.1rem;color:#e3ceff;margin:26px 0 14px}.no-margin{margin-bottom:0}button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.finish-actions{margin:20px 0}.small-title{font-size:clamp(1.8rem,5vw,3rem)}.correct-text{color:#92edb9}.wrong-text{color:#ffb4be}@media(max-width:540px){.study-grid{grid-template-columns:1fr}.stat-grid{gap:7px}.stat-grid div{padding:12px 5px}.stats{gap:6px}.pill{padding:8px;font-size:.82rem}main{padding:14px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+textarea,select{background:#0c1b34;color:#f5f8ff;border:1px solid #8e9cb8;border-radius:10px;padding:12px;font:inherit}textarea{width:100%;min-height:210px;line-height:1.6;margin:10px 0}.roster-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.player-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#23344e;padding:12px;border-radius:12px}.player-row label{font-weight:700;overflow-wrap:anywhere}.player-row select{max-width:155px}.out-player{opacity:.72;border:1px solid #dc8f9a}.survivor{border:2px solid #7be2aa}.arena-choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.arena-choice{background:#243d5c;border:2px solid #556c88;border-radius:12px;padding:16px;font-weight:700;line-height:1.45}.arena-choice.is-correct{border-color:#7be2aa;background:#165e50}.error{color:#ffbac5;line-height:1.6}.rules{line-height:1.8;color:#d6deed}.competition-badge{padding:12px;border-radius:14px;background:#2d3851;color:#ffe19a;margin:14px 0;font-weight:700}.undo{margin:14px 0}.winner-name{font-size:clamp(2rem,7vw,4rem);line-height:1.3;color:#ffe19a;overflow-wrap:anywhere}.players-out{margin-top:24px;color:#c5cfe0;line-height:1.8}.round-result{background:#233e53;padding:18px;border-radius:14px;line-height:1.7}textarea:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}@media(max-width:620px){.roster-grid,.arena-choices{grid-template-columns:1fr}.player-row select{max-width:140px}}
 </style></head><body><main>
-<header><div class="brand" lang="es">📚 SRA. SALGADO · ESPAÑOL I</div><div class="stats"><span class="pill">⭐ <b id="score">0</b> points</span><span class="pill" id="life-pill">❤️ <b id="lives">3</b> lives</span><button class="nav-button" id="home">Home</button></div></header>
+<header><div class="brand" lang="es">📚 SRA. SALGADO · ESPAÑOL I</div><div class="stats"><span class="pill" id="score-pill">⭐ <b id="score">0</b> points</span><span class="pill" id="life-pill">❤️ <b id="lives">3</b> lives</span><button class="nav-button" id="home">Home</button></div></header>
 <section id="welcome" class="card center"><div class="trophy" aria-hidden="true">🎒✨</div><h1 lang="es">La Misión de la Clase</h1>
 <p class="intro">Your school day is scrambled! Recover the classroom words, unlock your subjects, and put the days back in order.</p>
 <div class="levels"><span class="level active">1 · La clase</span><span class="level">2 · Las materias</span><span class="level">3 · Los días</span><span class="level">4 · Mixed mission</span></div>
 <div class="stat-grid"><div><strong>65</strong><span>vocabulary entries</span></div><div><strong>4</strong><span>challenge levels</span></div><div><strong>+100</strong><span>per correct answer</span></div></div>
 <p class="helper intro">Challenge: 32 questions · 3 lives each level. Three mistakes end the mission.<br>Full practice: every vocabulary entry once · no lives limit.<br>Read the accents, articles, and singular/plural forms carefully. Questions and choices shuffle each time.</p>
-<div class="actions"><button class="primary" id="start">🚀 Start challenge</button><button class="secondary" id="practice">🎯 Practice all 65</button><button class="secondary" id="study">📖 Study vocabulary</button></div></section>
+<div class="actions"><button class="primary" id="competition">🏆 Elimination competition</button><button class="secondary" id="start">🚀 Start challenge</button><button class="secondary" id="practice">🎯 Practice all 65</button><button class="secondary" id="study">📖 Study vocabulary</button></div></section>
 <section id="game" class="hidden"><div id="levelbar" class="levels"></div><div class="card"><div class="row"><span id="levelname" class="brand"></span><span id="counter" class="pill"></span></div>
 <div class="progress" role="progressbar" aria-label="Mission progress" aria-valuemin="0" aria-valuemax="100" id="progressbar"><div class="fill" id="progress"></div></div><div id="progress-copy" class="progress-copy"></div>
 <div id="cue" class="context-icon" aria-hidden="true"></div><p id="question" class="question"></p><div id="word" class="word"></div><div id="answers" class="answers"></div>
 <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div><div class="row"><span id="tip" class="helper">Choose the correct answer.</span><button id="next" class="primary hidden">Continue ➜</button></div></div></section>
 <section id="end" class="card center hidden"><div class="trophy" id="endicon" aria-hidden="true"></div><h1 class="small-title" id="endtitle"></h1><p id="endmessage" class="subtitle"></p><div id="finalscore" class="score-big"></div><p id="accuracy" class="helper"></p><div class="actions finish-actions"><button id="retry" class="primary">🔄 Play again</button><button id="practice-again" class="secondary">🎯 Practice all 65</button><button id="study-end" class="secondary">📖 Study vocabulary</button></div><div id="review"></div></section>
 <section id="study-screen" class="card hidden"><div class="row"><h2 class="no-margin">📖 Vocabulary notebook</h2><button class="secondary" id="study-back">Back</button></div><p class="helper">All vocabulary from your three lists. Some entries include more than one accepted meaning or form. Spanish days of the week use lowercase letters.</p><label for="search">Find a Spanish or English word</label><input id="search" type="search" placeholder="Try biblioteca, chemistry, or Monday…" autocomplete="off"><div id="study-list"></div></section>
+
+<section id="competition-setup" class="card hidden"><h1 class="small-title">🏆 Last Student Standing</h1><p class="subtitle">A teacher-led competition on one shared screen.</p>
+<ol class="rules"><li>Students write A, B, C, or D on paper or a mini-whiteboard. Everyone answers the same question before anyone reveals.</li><li>Ask everyone to show their answers together. Enter each active student's answer below the question.</li><li>Lock the answers to reveal the correct choice. One incorrect answer eliminates a student.</li><li>If everyone is wrong, nobody is eliminated: play a new question. Continue ties until exactly one student remains.</li></ol>
+<p class="helper">This mode runs on the teacher’s screen. Student devices do not connect to it. Names stay in this browser session and are not uploaded.</p>
+<label for="competition-names"><b>Student names or nicknames — one per line (2–40 players)</b></label><textarea id="competition-names" placeholder="Student 1&#10;Student 2&#10;Student 3" autocomplete="off"></textarea><p class="helper">Use unique names or add a last initial. Eliminated students can keep answering for practice.</p>
+<p id="setup-error" class="error" role="alert"></p><button id="competition-start" class="primary">Start competition ➜</button></section>
+<section id="arena" class="hidden"><div class="card"><div class="row"><span class="brand">🏆 LAST STUDENT STANDING</span><span id="round-number" class="pill"></span></div><div id="competition-count" class="competition-badge"></div><p id="arena-prompt" class="question"></p><div id="arena-word" class="word"></div><div id="arena-options" class="arena-choices"></div>
+<div id="arena-result" class="round-result hidden" role="status" aria-live="polite"></div>
+<h2 id="answer-heading">Teacher: record each student's answer</h2><p id="answer-instructions" class="helper">Collect all answers together, then enter them here. The correct answer stays hidden until you lock the round.</p><div id="competition-roster" class="roster-grid"></div><p id="round-error" class="error" role="alert"></p>
+<div class="actions"><button id="lock-round" class="primary">🔒 Lock answers &amp; reveal</button><button id="next-round" class="primary hidden">Next round ➜</button><button id="undo-round" class="secondary hidden">Correct an entry / undo this round</button></div><div id="eliminated-list" class="players-out"></div></div></section>
+<section id="champion" class="card center hidden"><div class="trophy" aria-hidden="true">🏆🎉</div><h1 class="small-title">¡Tenemos un ganador!</h1><p class="subtitle">Last student standing</p><div id="champion-name" class="winner-name"></div><p id="champion-summary" class="rules"></p><div id="champion-answer" class="round-result"></div><div class="actions"><button id="competition-replay" class="primary">Play again with this class</button><button id="champion-undo" class="secondary">Correct the final round</button><button id="competition-new" class="secondary">New roster</button></div></section>
 <footer lang="es">Sra. Salgado · Descubre 1 · La clase, las materias y los días de la semana</footer>
 </main><script>
 "use strict";
@@ -49,7 +62,7 @@ const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">"
 function shuffle(a){const out=[...a];for(let i=out.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[out[i],out[j]]=[out[j],out[i]]}return out}
 let levels=[],lvl=0,q=0,score=0,lives=3,answered=false,mode="challenge",attempts=0,mistakes=[],screenName="welcome",studyReturn="welcome";
 const labelNames=["La clase","Las materias","Los días","Mixed mission"];
-function screen(id){["welcome","game","end","study-screen"].forEach(x=>$(x).classList.toggle("hidden",x!==id));screenName=id}
+function screen(id){["welcome","game","end","study-screen","competition-setup","arena","champion"].forEach(x=>$(x).classList.toggle("hidden",x!==id));screenName=id;const isCompetition=["competition-setup","arena","champion"].includes(id);$("score-pill").classList.toggle("hidden",isCompetition);$("life-pill").classList.toggle("hidden",isCompetition)}
 function update(){$("score").textContent=score;$("lives").textContent=mode==="practice"?"∞":lives}
 function vocabQuestion(category,entry,index){
 const reverse=index%2===1;
@@ -107,4 +120,77 @@ if(!$("study-list").innerHTML)$("study-list").innerHTML="<p>No matching vocabula
 }
 function study(){studyReturn=screenName;$("search").value="";renderStudy();screen("study-screen")}
 $("start").addEventListener("click",()=>start("challenge"));$("practice").addEventListener("click",()=>start("practice"));$("practice-again").addEventListener("click",()=>start("practice"));$("retry").addEventListener("click",()=>start(mode));$("next").addEventListener("click",next);$("study").addEventListener("click",study);$("study-end").addEventListener("click",study);$("study-back").addEventListener("click",()=>screen(studyReturn));$("search").addEventListener("input",renderStudy);$("home").addEventListener("click",()=>{screen("welcome");$("score").textContent="0";$("lives").textContent="3"});
+
+let contest=null;
+function competitionSetup(){screen("competition-setup");$("setup-error").textContent="";$("score").textContent="—";$("lives").textContent="—"}
+function competitionDeck(){return shuffle([...categories.flatMap(c=>c.words.map((e,i)=>vocabQuestion(c,e,i))),...scenarios.map(contextQuestion)])}
+function beginCompetition(){
+const names=$("competition-names").value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+if(names.length<2||names.length>40){$("setup-error").textContent="Enter between 2 and 40 students, one per line.";return}
+if(names.some(n=>n.length>60)){$("setup-error").textContent="Please keep each name under 61 characters.";return}
+if(new Set(names.map(n=>n.toLocaleLowerCase())).size!==names.length){$("setup-error").textContent="Each player needs a unique name. Add a last initial where needed.";return}
+contest={players:names.map((name,id)=>({name,id,active:true,outRound:null})),deck:competitionDeck(),index:0,round:1,phase:"answer",responses:{},backup:null,result:""};
+renderCompetition()
+}
+function activePlayers(){return contest.players.filter(p=>p.active)}
+function renderCompetition(){
+screen("arena");const Q=contest.deck[contest.index],active=activePlayers(),locked=contest.phase==="results";
+$("round-number").textContent="Round "+contest.round;$("competition-count").textContent=active.length+" of "+contest.players.length+" students still in · one incorrect answer = elimination";
+$("arena-prompt").textContent=Q.prompt;$("arena-word").textContent=Q.word;$("arena-word").classList.toggle("hidden",!Q.word);$("arena-word").setAttribute("lang",Q.wordLang||"es");
+$("arena-options").innerHTML=Q.options.map((ans,i)=>'<div class="arena-choice '+(locked&&ans===Q.correct?"is-correct":"")+'" lang="'+Q.optionLang+'">'+String.fromCharCode(65+i)+". "+escapeHtml(ans)+'</div>').join("");
+$("arena-result").classList.toggle("hidden",!locked);$("arena-result").textContent=locked?contest.result+" Correct answer: "+String.fromCharCode(65+Q.options.indexOf(Q.correct))+". "+Q.correct+". "+Q.explanation:"";
+$("answer-heading").textContent=locked?"Round results":"Teacher: record each student's answer";
+$("answer-instructions").textContent=locked?"Students marked as eliminated sit out the next round. Use “Correct an entry” if an answer was entered incorrectly.":"Collect all answers together, then enter them here. The correct answer stays hidden until you lock the round.";
+const shown=locked?contest.players.filter(p=>p.active||p.outRound===contest.round):active;
+$("competition-roster").innerHTML="";
+shown.forEach(p=>{
+const row=document.createElement("div");row.className="player-row"+(locked?(p.active?" survivor":" out-player"):"");
+const label=document.createElement("label");label.textContent=p.name;label.setAttribute("for","player-answer-"+p.id);row.appendChild(label);
+if(!locked){const select=document.createElement("select");select.id="player-answer-"+p.id;select.innerHTML='<option value="">Choose…</option><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option><option value="none">No answer</option>';select.value=contest.responses[p.id]===undefined?"":contest.responses[p.id];select.addEventListener("change",()=>{contest.responses[p.id]=select.value});row.appendChild(select)}
+else{const status=document.createElement("span");status.textContent=p.active?"✓ Still in":"Out · round "+p.outRound;row.appendChild(status)}
+$("competition-roster").appendChild(row)
+});
+$("lock-round").classList.toggle("hidden",locked);$("next-round").classList.toggle("hidden",!locked);$("undo-round").classList.toggle("hidden",!locked);$("round-error").textContent="";
+const out=contest.players.filter(p=>!p.active);$("eliminated-list").textContent=out.length?"Eliminated: "+out.map(p=>p.name+" (round "+p.outRound+")").join(" · "):"No students eliminated yet.";
+$("score").textContent=active.length;$("lives").textContent="—";
+}
+function lockCompetition(){
+if(!contest||contest.phase!=="answer"||screenName!=="arena")return;
+const active=activePlayers();
+if(active.some(p=>contest.responses[p.id]===undefined||contest.responses[p.id]===""||!["0","1","2","3","none"].includes(String(contest.responses[p.id])))){$("round-error").textContent="Record an answer for every active player. Choose “No answer” for a blank response.";return}
+contest.backup=contest.players.map(p=>({...p}));
+const Q=contest.deck[contest.index],correct=String(Q.options.indexOf(Q.correct)),survivors=active.filter(p=>String(contest.responses[p.id])===correct);
+if(!survivors.length){contest.result="Everyone missed this question. No eliminations this round—everyone gets the next question."}
+else{
+const correctIds=new Set(survivors.map(p=>p.id));active.forEach(p=>{if(!correctIds.has(p.id)){p.active=false;p.outRound=contest.round}});
+const eliminated=active.length-survivors.length;
+contest.result=eliminated?eliminated+" student"+(eliminated===1?" was":"s were")+" eliminated; "+survivors.length+" remain.":"Everyone answered correctly. The tie continues!";
+}
+contest.phase="results";
+if(activePlayers().length===1)showChampion();else renderCompetition()
+}
+function advanceCompetition(){
+if(!contest||contest.phase!=="results"||screenName!=="arena")return;
+contest.index++;contest.round++;if(contest.index>=contest.deck.length){contest.deck=competitionDeck();contest.index=0}
+contest.phase="answer";contest.responses={};contest.backup=null;renderCompetition()
+}
+function undoCompetition(){
+if(!contest||!contest.backup||contest.phase!=="results")return;
+contest.players=contest.backup.map(p=>({...p}));contest.phase="answer";contest.backup=null;contest.result="";renderCompetition()
+}
+function showChampion(){
+const winner=activePlayers()[0],Q=contest.deck[contest.index];screen("champion");
+$("champion-name").textContent=winner.name;$("champion-summary").textContent="Winner out of "+contest.players.length+" players after "+contest.round+" round"+(contest.round===1?"":"s")+".";
+$("champion-answer").textContent="Final answer: "+String.fromCharCode(65+Q.options.indexOf(Q.correct))+". "+Q.correct+". "+Q.explanation;
+$("score").textContent="1";$("lives").textContent="—";
+}
+$("competition").addEventListener("click",competitionSetup);
+$("competition-start").addEventListener("click",beginCompetition);
+$("lock-round").addEventListener("click",lockCompetition);
+$("next-round").addEventListener("click",advanceCompetition);
+$("undo-round").addEventListener("click",undoCompetition);
+$("champion-undo").addEventListener("click",undoCompetition);
+$("competition-replay").addEventListener("click",()=>{if(contest){$("competition-names").value=contest.players.map(p=>p.name).join("\n");beginCompetition()}});
+$("competition-new").addEventListener("click",competitionSetup);
+
 </script></body></html>
