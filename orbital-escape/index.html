@@ -53,6 +53,7 @@ config("Write the FULL configuration for O²⁻. Oxygen has atomic number 8.",10
 choice("Which pair has the SAME electron configuration?",["K⁺ and Ar","K and Ar","Ca²⁺ and Ne","Cl⁻ and Ne"],"K⁺ and Ar","K⁺ has 19 − 1 = 18 electrons, and argon has 18. Both have 1s² 2s² 2p⁶ 3s² 3p⁶.","Compare electron counts after accounting for each ion’s charge.")
 ]}
 ];
+for(const room of rooms)for(const q of room.qs)if(q.options){for(let i=q.options.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[q.options[i],q.options[j]]=[q.options[j],q.options[i]]}}
 const KEY="mrs-salgado-orbital-escape-v1";
 let state=null,screen="welcome",activeSince=null,storageOK=true;
 function fresh(){return {version:1,index:0,score:0,elapsed:0,solved:false,finished:false,records:[],attempts:0,hinted:false}}
